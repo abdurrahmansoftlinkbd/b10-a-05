@@ -37,7 +37,7 @@
   <body>
     <!-- navbar starts -->
     <nav class="bg-orange-50 py-5">
-      <div class="navbar container mx-auto">
+      <div class="navbar text-center container mx-auto">
         <div class="navbar-start justify-start">
           <button
             class="btn py-2 px-8 font-lexend text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 hover:bg-lime-200 hover:border-lime-200"
@@ -46,42 +46,14 @@
           </button>
         </div>
         <div class="navbar-center">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
           <a href="#home">
             <div class="flex items-center gap-4">
               <div>
-                <img class="w-full" src="./assets/logo.png" alt="" />
+                <img
+                  class="w-full hidden md:block"
+                  src="./assets/logo.png"
+                  alt=""
+                />
               </div>
               <h3 class="text-neutral-900 text-xl font-semibold">
                 Donate Bangladesh
@@ -92,7 +64,11 @@
         <div class="navbar-end">
           <div class="flex items-center gap-3">
             <div>
-              <img class="w-full" src="./assets/coin.png" alt="" />
+              <img
+                class="w-full hidden md:block"
+                src="./assets/coin.png"
+                alt=""
+              />
             </div>
             <h3 class="text-xl font-medium text-secondary">
               <span>9999</span> BDT
