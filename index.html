@@ -25,6 +25,7 @@
           extend: {
             colors: {
               secondary: "rgba(17, 17, 17, 0.7)",
+              gray1: "rgba(17, 17, 17, 0.3)",
             },
             fontFamily: {
               lexend: ["Lexend", "sans-serif"],
@@ -34,17 +35,19 @@
       };
     </script>
   </head>
-  <body>
+  <body class="font-lexend">
     <!-- navbar starts -->
     <nav class="bg-orange-50 py-5">
       <div class="navbar text-center container mx-auto">
+        <!-- navbar strt -->
         <div class="navbar-start justify-start">
           <button
-            class="btn py-2 px-8 font-lexend text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 hover:bg-lime-200 hover:border-lime-200"
+            class="btn py-2 px-8 text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
           >
             Blog
           </button>
         </div>
+        <!-- navbar center -->
         <div class="navbar-center">
           <a href="#home">
             <div class="flex items-center gap-4">
@@ -61,6 +64,7 @@
             </div>
           </a>
         </div>
+        <!-- navbar end -->
         <div class="navbar-end">
           <div class="flex items-center gap-3">
             <div>
@@ -78,6 +82,23 @@
       </div>
     </nav>
     <!-- navbar ends -->
+
+    <!-- main starts -->
+    <main>
+      <section class="mt-20 text-center space-x-4">
+        <button
+          class="btn btn-lg rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 text-neutral-900 py-4 px-8 text-xl font-semibold transition-colors duration-200 ease-in-out"
+        >
+          Donation
+        </button>
+        <button
+          class="btn btn-lg bg-transparent rounded-lg border-gray1 text-neutral-900 py-4 px-8 text-xl font-semibold hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
+        >
+          History
+        </button>
+      </section>
+    </main>
+    <!-- main ends -->
 
     <script src="./app.js"></script>
   </body>
