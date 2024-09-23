@@ -8,6 +8,21 @@ const donateNoakhali = document.getElementById("donate-noakhali");
 const donateFeni = document.getElementById("donate-feni");
 const donateQuota = document.getElementById("donate-quota");
 
+// common functions
+function historyDesc(inputValue, title) {
+  const historyDesc = document.getElementById("history-desc");
+  const historyDiv = document.createElement("div");
+  historyDiv.innerHTML += `
+    <h1 class="text-xl font-bold">
+      ${inputValue} Taka is Donated for ${title}
+    </h1>
+    <p class="text-secondary font-light">
+    Date : ${new Date()}
+    </p>
+    `;
+  historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
+}
+
 // historyBtn
 historyBtn.addEventListener("click", function () {
   historyBtnClassAdd("bg-lime-300", "border-lime-300");
@@ -38,6 +53,7 @@ donateNoakhali.addEventListener("click", function () {
   // variables
   const inputNoakhali = document.getElementById("input-noakhali");
   let inputNoakhaliValue = parseFloat(inputNoakhali.value);
+  const title = "Flood at Noakhali, Bangladesh.";
   // condition
   if (
     inputNoakhaliValue <= 0 ||
@@ -68,17 +84,7 @@ donateNoakhali.addEventListener("click", function () {
   // hide initial history
   document.getElementById("historyHide").classList.remove("hidden");
   // history description
-  const historyDesc = document.getElementById("history-desc");
-  const historyDiv = document.createElement("div");
-  historyDiv.innerHTML += `
-    <h1 class="text-xl font-bold">
-      ${inputNoakhaliValue} Taka is Donated for Flood at Noakhali, Bangladesh.
-    </h1>
-    <p class="text-secondary font-light">
-    Date : ${new Date()}
-    </p>
-    `;
-  historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
+  historyDesc(inputNoakhaliValue, title);
 });
 
 // donateFeni
@@ -87,6 +93,7 @@ donateFeni.addEventListener("click", function () {
   // variables
   const inputFeni = document.getElementById("input-feni");
   const inputFeniValue = parseFloat(inputFeni.value);
+  let title = "Flood Relief in Feni,Bangladesh.";
   // condition
   if (inputFeniValue <= 0 || isNaN(inputFeniValue) || isNaN(inputFeni.value)) {
     inputFeni.value = "";
@@ -112,17 +119,7 @@ donateFeni.addEventListener("click", function () {
   // hideInitialHistory
   document.getElementById("historyHide").classList.remove("hidden");
   // historyDesc
-  const historyDesc = document.getElementById("history-desc");
-  const historyDiv = document.createElement("div");
-  historyDiv.innerHTML += `
-    <h1 class="text-xl font-bold">
-                  ${inputFeniValue} Taka is Donated for Flood Relief in Feni,Bangladesh.
-    </h1>
-    <p class="text-secondary font-light">
-        Date : ${new Date()}
-    </p>
-  `;
-  historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
+  historyDesc(inputFeniValue, title);
 });
 
 // donateQuota
@@ -131,6 +128,7 @@ donateQuota.addEventListener("click", function () {
   // variables
   const inputQuota = document.getElementById("input-quota");
   let inputQuotaValue = parseFloat(inputQuota.value);
+  let title = "Injured in the Quota Movement.";
   // condition
   if (
     inputQuotaValue <= 0 ||
@@ -160,15 +158,5 @@ donateQuota.addEventListener("click", function () {
   // hideInitialHistory
   document.getElementById("historyHide").classList.remove("hidden");
   // historyDesc
-  const historyDesc = document.getElementById("history-desc");
-  const historyDiv = document.createElement("div");
-  historyDiv.innerHTML += `
-    <h1 class="text-xl font-bold">
-      ${inputQuotaValue} Taka is Donated for Injured in the Quota Movement.
-    </h1>
-    <p class="text-secondary font-light">
-        Date : ${new Date()}
-    </p>
-  `;
-  historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
+  historyDesc(inputQuotaValue, title);
 });
