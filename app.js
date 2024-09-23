@@ -3,9 +3,10 @@ const historyBtn = document.getElementById("history-btn");
 const donationBtn = document.getElementById("donation-btn");
 const donateSection = document.getElementById("donate-section");
 const historySection = document.getElementById("history-section");
-const donateNoakhali = document.getElementById("donate-noakhali");
 let totalAmount = parseFloat(document.getElementById("total-amount").innerText);
+const donateNoakhali = document.getElementById("donate-noakhali");
 const donateFeni = document.getElementById("donate-feni");
+const donateQuota = document.getElementById("donate-quota");
 
 // historyBtn
 historyBtn.addEventListener("click", function () {
@@ -111,3 +112,45 @@ donateFeni.addEventListener("click", function () {
 });
 
 // donateQuota
+donateQuota.addEventListener("click", function () {
+  // variables
+  const inputQuota = document.getElementById("input-quota");
+  let inputQuotaValue = parseFloat(inputQuota.value);
+  // condition
+  if (
+    inputQuotaValue <= 0 ||
+    isNaN(inputQuota.value) ||
+    isNaN(inputQuotaValue)
+  ) {
+    inputQuota.value = "";
+    return alert("Invalid amount.");
+  } else if (inputQuotaValue > totalAmount) {
+    return alert("You don't have enough money");
+  }
+  // currentAmount
+  let currentAmount = totalAmount - inputQuotaValue;
+  totalAmount = currentAmount;
+  document.getElementById("total-amount").innerText = currentAmount;
+  // reset input field
+  inputQuota.value = "";
+  // updatedAmount
+  const updatedAmountQuota = document.getElementById("updated-amount-quota");
+  let updatedAmountQuotaValue = parseFloat(updatedAmountQuota.innerText);
+  let updatedAmount = updatedAmountQuotaValue + inputQuotaValue;
+  updatedAmountQuotaValue = updatedAmount;
+  updatedAmountQuota.innerText = updatedAmount;
+  // hideInitialHistory
+  document.getElementById("historyHide").classList.remove("hidden");
+  // historyDesc
+  const historyDesc = document.getElementById("history-desc");
+  const historyDiv = document.createElement("div");
+  historyDiv.innerHTML += `
+    <h1 class="text-xl font-bold">
+                  ${inputQuotaValue} Taka is Donated for Injured in the Quota Movement.
+    </h1>
+    <p class="text-secondary font-light">
+        Date : ${new Date()}
+    </p>
+  `;
+  historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
+});
