@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -233,7 +233,7 @@
             >
               <img
                 src="./assets/quota-protest.png"
-                class="w-full md:w-1/2 rounded-xl shadow-2xl block blur-lg"
+                class="w-full md:w-1/2 rounded-xl shadow-2xl block blur-md"
               />
               <div class="flex flex-col gap-6">
                 <div
@@ -267,6 +267,7 @@
                   class="input input-bordered w-full"
                 />
                 <button
+                  onclick="my_modal_1.showModal()"
                   id="donate-quota"
                   class="btn btn-primary bg-lime-300 border-lime-300 text-neutral-900 font-semibold text-xl hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
                 >
@@ -278,6 +279,25 @@
         </section>
         <!-- quota ends -->
       </section>
+      <!-- modal -->
+      <!-- Open the modal using ID.showModal() method -->
+
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box space-y-6">
+          <h3 class="text-4xl font-bold text-center">Congrates!</h3>
+          <div class="w-1/12 flex mx-auto">
+            <img class="w-full" src="./assets/coin.png" alt="" />
+          </div>
+          <p class="text-center">You Have Donated for Humankind</p>
+          <h3 class="text-xl text-center font-bold">Successfully</h3>
+          <div class="modal-action">
+            <form method="dialog" class="w-1/6 mx-auto">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
     <!-- main ends -->
 

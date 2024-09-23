@@ -38,9 +38,15 @@ donateNoakhali.addEventListener("click", function () {
   const inputNoakhali = document.getElementById("input-noakhali");
   let inputNoakhaliValue = parseFloat(inputNoakhali.value);
   // condition
-  if (inputNoakhaliValue <= 0 || isNaN(inputNoakhaliValue)) {
+  if (
+    inputNoakhaliValue <= 0 ||
+    isNaN(inputNoakhaliValue) ||
+    isNaN(inputNoakhali.value)
+  ) {
+    inputNoakhali.value = "";
     return alert("Invalid amount.");
   } else if (inputNoakhaliValue > totalAmount) {
+    inputNoakhali.value = "";
     return alert("You don't have enough money");
   }
   // currentAmount
@@ -63,7 +69,7 @@ donateNoakhali.addEventListener("click", function () {
   const historyDiv = document.createElement("div");
   historyDiv.innerHTML += `
     <h1 class="text-xl font-bold">
-                  ${inputNoakhaliValue} Taka is Donated for Flood at Noakhali, Bangladesh.
+      ${inputNoakhaliValue} Taka is Donated for Flood at Noakhali, Bangladesh.
     </h1>
     <p class="text-secondary font-light">
         Date : ${new Date()}
@@ -78,9 +84,11 @@ donateFeni.addEventListener("click", function () {
   const inputFeni = document.getElementById("input-feni");
   const inputFeniValue = parseFloat(inputFeni.value);
   // condition
-  if (inputFeniValue <= 0 || isNaN(inputFeniValue)) {
+  if (inputFeniValue <= 0 || isNaN(inputFeniValue) || isNaN(inputFeni.value)) {
+    inputFeni.value = "";
     return alert("Invalid amount.");
   } else if (inputFeniValue > totalAmount) {
+    inputFeni.value = "";
     return alert("You don't have enough money");
   }
   // currentAmount
@@ -112,6 +120,7 @@ donateFeni.addEventListener("click", function () {
 });
 
 // donateQuota
+donateQuota.onclick = null;
 donateQuota.addEventListener("click", function () {
   // variables
   const inputQuota = document.getElementById("input-quota");
@@ -125,8 +134,11 @@ donateQuota.addEventListener("click", function () {
     inputQuota.value = "";
     return alert("Invalid amount.");
   } else if (inputQuotaValue > totalAmount) {
+    inputQuota.value = "";
     return alert("You don't have enough money");
   }
+
+  donateQuota.onclick = my_modal_1.showModal();
   // currentAmount
   let currentAmount = totalAmount - inputQuotaValue;
   totalAmount = currentAmount;
