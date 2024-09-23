@@ -1,17 +1,11 @@
-// global
+// global variables
 const historyBtn = document.getElementById("history-btn");
 const donationBtn = document.getElementById("donation-btn");
 const donateSection = document.getElementById("donate-section");
 const historySection = document.getElementById("history-section");
-const inputNoakhali = document.getElementById("input-noakhali");
 const donateNoakhali = document.getElementById("donate-noakhali");
 let totalAmount = parseFloat(document.getElementById("total-amount").innerText);
-let updatedAmountEl = parseFloat(
-  document.getElementById("updated-amount").innerText
-);
-let sum = 0;
 const donateFeni = document.getElementById("donate-feni");
-const inputFeni = document.getElementById("input-feni");
 
 // historyBtn
 historyBtn.addEventListener("click", function () {
@@ -39,31 +33,36 @@ donationBtn.addEventListener("click", function () {
 
 // donateNoakhali
 donateNoakhali.addEventListener("click", function () {
+  // variables
+  const inputNoakhali = document.getElementById("input-noakhali");
   let inputNoakhaliValue = parseFloat(inputNoakhali.value);
+  // condition
   if (inputNoakhaliValue <= 0 || isNaN(inputNoakhaliValue)) {
     return alert("Invalid amount.");
   } else if (inputNoakhaliValue > totalAmount) {
     return alert("You don't have enough money");
   }
-
+  // currentAmount
   let currentAmount = totalAmount - inputNoakhaliValue;
   totalAmount = currentAmount;
   document.getElementById("total-amount").innerText = currentAmount;
-
+  // reset input field
   inputNoakhali.value = "";
-
+  // updatedAmount
+  let updatedAmountEl = parseFloat(
+    document.getElementById("updated-amount").innerText
+  );
   let updatedAmount = updatedAmountEl + inputNoakhaliValue;
   updatedAmountEl = updatedAmount;
-
   document.getElementById("updated-amount").innerText = updatedAmount;
-
+  // hide initial history
   document.getElementById("historyHide").classList.remove("hidden");
-
+  // history description
   const historyDesc = document.getElementById("history-desc");
   const historyDiv = document.createElement("div");
   historyDiv.innerHTML += `
     <h1 class="text-xl font-bold">
-                  ${updatedAmount} Taka is Donated for Flood at Noakhali, Bangladesh.
+                  ${inputNoakhaliValue} Taka is Donated for Flood at Noakhali, Bangladesh.
     </h1>
     <p class="text-secondary font-light">
         Date : ${new Date()}
@@ -74,9 +73,9 @@ donateNoakhali.addEventListener("click", function () {
 
 // donateFeni
 donateFeni.addEventListener("click", function () {
-  const inputFeniValue = parseFloat(
-    document.getElementById("input-feni").value
-  );
+  // variables
+  const inputFeni = document.getElementById("input-feni");
+  const inputFeniValue = parseFloat(inputFeni.value);
   // condition
   if (inputFeniValue <= 0 || isNaN(inputFeniValue)) {
     return alert("Invalid amount.");
@@ -110,3 +109,5 @@ donateFeni.addEventListener("click", function () {
   `;
   historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
 });
+
+// donateQuota
