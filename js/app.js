@@ -15,12 +15,19 @@ function historyDesc(inputValue, title) {
   const historyDesc = document.getElementById("history-desc");
   const historyDiv = document.createElement("div");
   historyDiv.innerHTML += `
+    <div
+      
+      class="hero-content w-full flex-col border border-gray2 rounded-2xl p-8 mb-6 gap-8 lg:flex-row justify-start"
+    >
+    <div class="flex flex-col gap-4">
     <h1 class="text-xl font-bold">
       ${inputValue} Taka is Donated for ${title}
     </h1>
     <p class="text-secondary font-light">
     Date : ${new Date()}
     </p>
+    </div>
+    </div>
     `;
   historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
 }
@@ -97,8 +104,6 @@ donateNoakhali.addEventListener("click", function () {
   let updatedAmount = updatedAmountEl + inputNoakhaliValue;
   updatedAmountEl = updatedAmount;
   document.getElementById("updated-amount").innerText = updatedAmount;
-  // hide initial history
-  document.getElementById("historyHide").classList.remove("hidden");
   // history description
   historyDesc(inputNoakhaliValue, title);
 });
@@ -130,8 +135,6 @@ donateFeni.addEventListener("click", function () {
   let updatedAmount = updatedAmountFeniValue + inputFeniValue;
   updatedAmountFeniValue = updatedAmount;
   updatedAmountFeni.innerText = updatedAmount;
-  // hideInitialHistory
-  document.getElementById("historyHide").classList.remove("hidden");
   // historyDesc
   historyDesc(inputFeniValue, title);
 });
@@ -167,8 +170,6 @@ donateQuota.addEventListener("click", function () {
   let updatedAmount = updatedAmountQuotaValue + inputQuotaValue;
   updatedAmountQuotaValue = updatedAmount;
   updatedAmountQuota.innerText = updatedAmount;
-  // hideInitialHistory
-  document.getElementById("historyHide").classList.remove("hidden");
   // historyDesc
   historyDesc(inputQuotaValue, title);
 });
