@@ -4,6 +4,157 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisyui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              secondary: "rgba(17, 17, 17, 0.7)",
+              gray1: "rgba(17, 17, 17, 0.3)",
+              gray2: "rgba(17, 17, 17, 0.1);",
+              gray3: "rgba(17, 17, 17, 0.05)",
+            },
+            fontFamily: {
+              lexend: ["Lexend", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body></body>
+  <body class="font-lexend">
+    <!-- navbar starts -->
+    <section class="sticky top-0 z-10">
+      <nav class="bg-orange-50 py-5 w-full">
+        <div class="navbar text-center container mx-auto">
+          <!-- navbar strt -->
+          <div class="navbar-start justify-start">
+            <button
+              id="home-btn"
+              class="btn py-2 px-8 text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
+            >
+              Home
+            </button>
+          </div>
+          <!-- navbar center -->
+          <div class="navbar-center">
+            <a href="#home">
+              <div class="flex items-center gap-4">
+                <div>
+                  <img class="w-full" src="./assets/logo.png" alt="" />
+                </div>
+                <h3
+                  class="text-neutral-900 text-xl font-semibold hidden md:block"
+                >
+                  Donate Bangladesh
+                </h3>
+              </div>
+            </a>
+          </div>
+          <!-- navbar end -->
+          <div class="navbar-end">
+            <div class="flex items-center gap-3">
+              <div>
+                <img class="w-full" src="./assets/coin.png" alt="" />
+              </div>
+              <h3 class="text-xl font-medium text-secondary">
+                <span id="total-amount">9999</span> BDT
+              </h3>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- navbar ends -->
+
+    <!-- faqs starts -->
+    <div class="join join-vertical container mx-auto flex">
+      <h1 class="text-5xl font-bold my-12">Important FAQ</h1>
+
+      <!-- faq1 -->
+      <div class="collapse collapse-arrow join-item border-base-300 border p-4">
+        <input type="radio" name="my-accordion-4" checked="checked" />
+        <div class="collapse-title text-2xl font-semibold">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p class="text-sm w-11/12">
+            The Document Object Model (DOM) is a programming interface for web
+            documents. It represents the structure of a webpage as a tree of
+            objects, allowing programming languages like JavaScript to interact
+            with and manipulate HTML and XML documents.
+          </p>
+        </div>
+      </div>
+
+      <!-- faq2 -->
+      <div class="collapse collapse-arrow join-item border-base-300 border p-4">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-2xl font-semibold">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p class="text-sm w-11/12">
+            To select an element from the DOM (Document Object Model) in
+            JavaScript, you have several methods at your disposal. Here are the
+            most common ones: getElementById(), querySelector(),
+            querySelectorAll(), getElementsByClassName(), getElementsByTagName()
+          </p>
+        </div>
+      </div>
+
+      <!-- faq3 -->
+      <div class="collapse collapse-arrow join-item border-base-300 border p-4">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-2xl font-semibold">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p class="text-sm w-11/12">
+            Event delegation in the context of the DOM is a technique in
+            JavaScript where instead of attaching event listeners to multiple
+            child elements, you attach a single event listener to their common
+            parent. The event then "bubbles up" from the child element that
+            triggers it to the parent, where you handle it.
+          </p>
+        </div>
+      </div>
+
+      <!-- faq4 -->
+      <div class="collapse collapse-arrow join-item border-base-300 border p-4">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-2xl font-semibold">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <p class="text-sm w-11/12">
+            To manipulate an element's attributes and styles using the DOM in
+            JavaScript, you can use various methods and properties. Manipulating
+            Attributes: getAttribute(), setAttribute(), removeAttribute()
+            Manipulating Styles: element.style.property, classList
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- faqs ends -->
+    <script src="./blog.js"></script>
+  </body>
 </html>
