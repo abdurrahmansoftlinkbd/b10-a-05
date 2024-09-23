@@ -72,13 +72,14 @@ donateNoakhali.addEventListener("click", function () {
       ${inputNoakhaliValue} Taka is Donated for Flood at Noakhali, Bangladesh.
     </h1>
     <p class="text-secondary font-light">
-        Date : ${new Date()}
+    Date : ${new Date()}
     </p>
-  `;
+    `;
   historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
 });
 
 // donateFeni
+donateFeni.onclick = null;
 donateFeni.addEventListener("click", function () {
   // variables
   const inputFeni = document.getElementById("input-feni");
@@ -91,6 +92,8 @@ donateFeni.addEventListener("click", function () {
     inputFeni.value = "";
     return alert("You don't have enough money");
   }
+  // display modal
+  donateFeni.onclick = my_modal_1.showModal();
   // currentAmount
   let currentAmount = totalAmount - inputFeniValue;
   totalAmount = currentAmount;
@@ -137,7 +140,7 @@ donateQuota.addEventListener("click", function () {
     inputQuota.value = "";
     return alert("You don't have enough money");
   }
-
+  // display modal
   donateQuota.onclick = my_modal_1.showModal();
   // currentAmount
   let currentAmount = totalAmount - inputQuotaValue;
@@ -158,7 +161,7 @@ donateQuota.addEventListener("click", function () {
   const historyDiv = document.createElement("div");
   historyDiv.innerHTML += `
     <h1 class="text-xl font-bold">
-                  ${inputQuotaValue} Taka is Donated for Injured in the Quota Movement.
+      ${inputQuotaValue} Taka is Donated for Injured in the Quota Movement.
     </h1>
     <p class="text-secondary font-light">
         Date : ${new Date()}
