@@ -8,7 +8,7 @@ const donateNoakhali = document.getElementById("donate-noakhali");
 const donateFeni = document.getElementById("donate-feni");
 const donateQuota = document.getElementById("donate-quota");
 const blogBtn = document.getElementById("blog-btn");
-const homeBtn = document.getElementById("home-btn");
+const navCenter = document.getElementById("nav-center");
 
 // common functions
 function historyDesc(inputValue, title) {
@@ -30,15 +30,15 @@ function currentAmount(inputNumValue) {
   document.getElementById("total-amount").innerText = currentAmount;
 }
 
+// navCenter
+navCenter.addEventListener("click", function () {
+  window.location.href = "./index.html";
+});
+
 // blogBtn
 blogBtn.addEventListener("click", function () {
   window.location.href = "./blog.html";
   blogBtn.innerText = "Home";
-});
-// homeBtn
-homeBtn.addEventListener("click", function () {
-  window.location.href = "./index.html";
-  homeBtn.innerText = "Blog";
 });
 
 // historyBtn
