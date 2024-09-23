@@ -71,7 +71,7 @@
               <img class="w-full" src="./assets/coin.png" alt="" />
             </div>
             <h3 class="text-xl font-medium text-secondary">
-              <span>9999</span> BDT
+              <span id="total-amount">9999</span> BDT
             </h3>
           </div>
         </div>
@@ -104,16 +104,17 @@
         <section class="mb-6">
           <div class="hero container max-w-6xl mx-auto">
             <div
-              class="hero-content w-full flex-col border border-gray2 rounded-2xl p-8 gap-8 lg:flex-row justify-start"
+              id="historyHide"
+              class="hero-content w-full flex-col border border-gray2 rounded-2xl p-8 gap-8 lg:flex-row justify-start hidden"
             >
-              <div class="flex flex-col gap-4">
-                <h1 class="text-xl font-bold">
+              <div id="history-desc" class="flex flex-col gap-4">
+                <!-- <h1 class="text-xl font-bold">
                   96500 Taka is Donated for famine-2024 at Feni, Bangladesh
                 </h1>
                 <p class="text-secondary font-light">
                   Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
                   Time)
-                </p>
+                </p> -->
               </div>
             </div>
           </div>
@@ -141,7 +142,7 @@
                     <img class="w-full" src="./assets/coin.png" alt="" />
                   </div>
                   <h3 class="text-base font-normal text-secondary">
-                    <span>0</span> BDT
+                    <span id="updated-amount">0</span> BDT
                   </h3>
                 </div>
                 <h1 class="text-xl font-bold">
@@ -156,11 +157,13 @@
                   impact on the lives of those in need.
                 </p>
                 <input
+                  id="input-noakhali"
                   type="text"
                   placeholder="Write Donation Amount"
                   class="input input-bordered w-full"
                 />
                 <button
+                  id="donate-noakhali"
                   class="btn btn-primary bg-lime-300 border-lime-300 text-neutral-900 font-semibold text-xl hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
                 >
                   Donate Now
