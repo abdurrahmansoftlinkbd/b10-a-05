@@ -7,6 +7,7 @@ let totalAmount = parseFloat(document.getElementById("total-amount").innerText);
 const donateNoakhali = document.getElementById("donate-noakhali");
 const donateFeni = document.getElementById("donate-feni");
 const donateQuota = document.getElementById("donate-quota");
+const blogBtn = document.getElementById("blog-btn");
 
 // common functions
 function historyDesc(inputValue, title) {
@@ -27,6 +28,11 @@ function currentAmount(inputNumValue) {
   totalAmount = currentAmount;
   document.getElementById("total-amount").innerText = currentAmount;
 }
+
+// blogBtn
+blogBtn.addEventListener("click", function () {
+  window.location.href = "./blog.html";
+});
 
 // historyBtn
 historyBtn.addEventListener("click", function () {
