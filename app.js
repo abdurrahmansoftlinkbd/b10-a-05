@@ -22,6 +22,11 @@ function historyDesc(inputValue, title) {
     `;
   historyDesc.insertBefore(historyDiv, historyDesc.firstChild);
 }
+function currentAmount(inputNumValue) {
+  let currentAmount = totalAmount - inputNumValue;
+  totalAmount = currentAmount;
+  document.getElementById("total-amount").innerText = currentAmount;
+}
 
 // historyBtn
 historyBtn.addEventListener("click", function () {
@@ -69,9 +74,7 @@ donateNoakhali.addEventListener("click", function () {
   // display modal
   donateNoakhali.onclick = my_modal_1.showModal();
   // currentAmount
-  let currentAmount = totalAmount - inputNoakhaliValue;
-  totalAmount = currentAmount;
-  document.getElementById("total-amount").innerText = currentAmount;
+  currentAmount(inputNoakhaliValue);
   // reset input field
   inputNoakhali.value = "";
   // updatedAmount
@@ -105,9 +108,7 @@ donateFeni.addEventListener("click", function () {
   // display modal
   donateFeni.onclick = my_modal_1.showModal();
   // currentAmount
-  let currentAmount = totalAmount - inputFeniValue;
-  totalAmount = currentAmount;
-  document.getElementById("total-amount").innerText = currentAmount;
+  currentAmount(inputFeniValue);
   // reset input field
   inputFeni.value = "";
   // updatedAmount
@@ -144,9 +145,7 @@ donateQuota.addEventListener("click", function () {
   // display modal
   donateQuota.onclick = my_modal_1.showModal();
   // currentAmount
-  let currentAmount = totalAmount - inputQuotaValue;
-  totalAmount = currentAmount;
-  document.getElementById("total-amount").innerText = currentAmount;
+  currentAmount(inputQuotaValue);
   // reset input field
   inputQuota.value = "";
   // updatedAmount
