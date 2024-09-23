@@ -38,46 +38,49 @@
     </script>
   </head>
   <body class="font-lexend">
-    <!-- navbar starts -->
-    <nav class="bg-orange-50 py-5 w-full sticky top-0 z-10">
-      <div class="navbar text-center container mx-auto">
-        <!-- navbar strt -->
-        <div class="navbar-start justify-start">
-          <button
-            class="btn py-2 px-8 text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
-          >
-            Blog
-          </button>
-        </div>
-        <!-- navbar center -->
-        <div class="navbar-center">
-          <a href="#home">
-            <div class="flex items-center gap-4">
-              <div>
-                <img class="w-full" src="./assets/logo.png" alt="" />
+    <section class="sticky top-0 z-10 backdrop-blur-md">
+      <!-- navbar starts -->
+      <nav class="bg-orange-50 py-5 w-full">
+        <div class="navbar text-center container mx-auto">
+          <!-- navbar strt -->
+          <div class="navbar-start justify-start">
+            <button
+              class="btn py-2 px-8 text-xl font-semibold text-neutral-900 rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
+            >
+              Blog
+            </button>
+          </div>
+          <!-- navbar center -->
+          <div class="navbar-center">
+            <a href="#home">
+              <div class="flex items-center gap-4">
+                <div>
+                  <img class="w-full" src="./assets/logo.png" alt="" />
+                </div>
+                <h3
+                  class="text-neutral-900 text-xl font-semibold hidden md:block"
+                >
+                  Donate Bangladesh
+                </h3>
               </div>
-              <h3
-                class="text-neutral-900 text-xl font-semibold hidden md:block"
-              >
-                Donate Bangladesh
+            </a>
+          </div>
+          <!-- navbar end -->
+          <div class="navbar-end">
+            <div class="flex items-center gap-3">
+              <div>
+                <img class="w-full" src="./assets/coin.png" alt="" />
+              </div>
+              <h3 class="text-xl font-medium text-secondary">
+                <span id="total-amount">9999</span> BDT
               </h3>
             </div>
-          </a>
-        </div>
-        <!-- navbar end -->
-        <div class="navbar-end">
-          <div class="flex items-center gap-3">
-            <div>
-              <img class="w-full" src="./assets/coin.png" alt="" />
-            </div>
-            <h3 class="text-xl font-medium text-secondary">
-              <span id="total-amount">9999</span> BDT
-            </h3>
           </div>
         </div>
-      </div>
+      </nav>
+      <!-- navbar ends -->
       <!-- button section starts-->
-      <section class="mt-20 text-center space-x-4 mb-8 sticky">
+      <section class="mt-8 text-center space-x-4 pb-8">
         <button
           id="donation-btn"
           class="btn btn-lg rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 text-neutral-900 py-4 px-8 text-xl font-semibold transition-colors duration-200 ease-in-out"
@@ -92,8 +95,7 @@
         </button>
       </section>
       <!-- button section ends -->
-    </nav>
-    <!-- navbar ends -->
+    </section>
 
     <!-- main starts -->
     <main class="pb-20">
