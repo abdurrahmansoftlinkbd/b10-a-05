@@ -39,7 +39,7 @@
   </head>
   <body class="font-lexend">
     <!-- navbar starts -->
-    <nav class="bg-orange-50 py-5 w-full">
+    <nav class="bg-orange-50 py-5 w-full sticky top-0 z-10">
       <div class="navbar text-center container mx-auto">
         <!-- navbar strt -->
         <div class="navbar-start justify-start">
@@ -82,7 +82,7 @@
     <!-- main starts -->
     <main class="pb-20">
       <!-- button section starts-->
-      <section class="mt-20 text-center space-x-4 mb-8">
+      <section class="mt-20 text-center space-x-4 mb-8 sticky">
         <button
           id="donation-btn"
           class="btn btn-lg rounded-lg bg-lime-300 border-lime-300 hover:bg-lime-200 hover:border-lime-200 text-neutral-900 py-4 px-8 text-xl font-semibold transition-colors duration-200 ease-in-out"
@@ -191,11 +191,11 @@
                     <img class="w-full" src="./assets/coin.png" alt="" />
                   </div>
                   <h3 class="text-base font-normal text-secondary">
-                    <span>0</span> BDT
+                    <span id="updated-amount-feni">0</span> BDT
                   </h3>
                 </div>
                 <h1 class="text-xl font-bold">
-                  Donate for Flood at Noakhali, Bangladesh
+                  Donate for Flood Relief in Feni,Bangladesh
                 </h1>
                 <p class="text-secondary font-light">
                   The recent floods in Feni have devastated local communities,
@@ -208,11 +208,13 @@
                   today to assist those in urgent need.
                 </p>
                 <input
+                  id="input-feni"
                   type="text"
                   placeholder="Write Donation Amount"
                   class="input input-bordered w-full"
                 />
                 <button
+                  id="donate-feni"
                   class="btn btn-primary bg-lime-300 border-lime-300 text-neutral-900 font-semibold text-xl hover:bg-lime-200 hover:border-lime-200 transition-colors duration-200 ease-in-out"
                 >
                   Donate Now
