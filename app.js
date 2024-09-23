@@ -33,6 +33,7 @@ donationBtn.addEventListener("click", function () {
 });
 
 // donateNoakhali
+donateNoakhali.onclick = null;
 donateNoakhali.addEventListener("click", function () {
   // variables
   const inputNoakhali = document.getElementById("input-noakhali");
@@ -49,6 +50,8 @@ donateNoakhali.addEventListener("click", function () {
     inputNoakhali.value = "";
     return alert("You don't have enough money");
   }
+  // display modal
+  donateNoakhali.onclick = my_modal_1.showModal();
   // currentAmount
   let currentAmount = totalAmount - inputNoakhaliValue;
   totalAmount = currentAmount;
